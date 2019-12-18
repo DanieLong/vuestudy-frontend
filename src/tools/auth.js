@@ -1,3 +1,4 @@
+import { LocalStorage } from '../tools/storage'
 export let Auth = {
   checkUser: function(cname) {
     let name = cname + '='
@@ -18,5 +19,13 @@ export let Auth = {
   },
   logout: function(name) {
     document.cookie = name + '=;expires=' + new Date(0).toGMTString()
+  },
+  setHeader: function() {
+    let config = {
+      headers: {
+        Authorization: LocalStorage.get('auth')
+      }
+    }
+    return config
   }
 }
