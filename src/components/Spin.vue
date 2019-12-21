@@ -1,5 +1,6 @@
 <template>
-  <div class="layer" id="__layer__">
+  <div class="layer"
+       id="__layer__">
     <div class="spin">
       <i />
       <i />
@@ -13,7 +14,7 @@
   </div>
 </template>
 
-<style >
+<style lang="scss" scoped>
 @keyframes spin-animation {
   50% {
     transform: scale(0.4);
@@ -103,5 +104,5 @@
 <script>
 export default {
   name: 'spin'
-}
+};
 </script>

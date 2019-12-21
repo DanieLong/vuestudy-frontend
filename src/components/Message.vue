@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<style  >
+<style lang="scss" scoped>
 .layer {
   position: fixed;
   width: 100%;
@@ -34,5 +34,5 @@
 export default {
   name: 'spin',
   props: 'message'
-}
+};
 </script>
