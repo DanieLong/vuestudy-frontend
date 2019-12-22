@@ -20,6 +20,7 @@ export let Auth = {
   logout: function(name) {
     document.cookie = name + '=;expires=' + new Date(0).toGMTString()
   },
+  //添加请求头
   setHeader: function() {
     let config = {
       headers: {

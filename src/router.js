@@ -4,6 +4,8 @@ import VueRouter from 'vue-router'
 const Home = () => import('./views/Home.vue')
 const Login = () => import('./views/Login.vue')
 const Index = () => import('./views/Index.vue')
+
+const User = () => import('./views/User.vue')
 Vue.use(VueRouter)
 
 //创建一个VueRouter对象
@@ -19,7 +21,14 @@ export default new VueRouter({
     {
       path: '/index',
       name: 'index',
-      component: Index
+      component: Index,
+      children: [
+        {
+          name: 'user',
+          path: 'user',
+          component: User
+        }
+      ]
     }
   ]
 })

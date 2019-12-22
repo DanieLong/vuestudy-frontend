@@ -6,7 +6,9 @@
     <el-container>
       <el-header height="90px">Header</el-header>
       <el-main>
-        <div style="height:800px"></div>
+        <div style="height:800px">
+          <router-view />
+        </div>
       </el-main>
       <el-footer height="80px">Footer</el-footer>
     </el-container>
@@ -33,7 +35,7 @@ export default {
   //进入主页之前验证token是否有效，无效的话进入登录页面
   beforeCreate() {
     axios
-      .get('api/user/testToken', Auth.setHeader())
+      .get('/api/user/testToken', Auth.setHeader())
       .then(res => {
         console.log(res.data)
       })
@@ -61,7 +63,11 @@ export default {
         })
     },
     handleNodeClick(data) {
-      console.log(data)
+      // console.log(data)
+      if (data.resourceType == '2') {
+        let url = data.url
+        this.$router.push({ name: url })
+      }
     },
     makeTree: function(data) {
       let transdata = transData(data, 'id', 'pid', 'children')

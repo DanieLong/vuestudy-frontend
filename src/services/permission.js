@@ -25,9 +25,9 @@ export function transData(a, idStr, pidStr, chindrenStr) {
 
   for (; j < len; j++) {
     let aVal = a[j]
-    console.log('aVal:' + aVal)
+    // console.log('aVal:' + aVal)
     let hashVP = hash[aVal[pid]] //当前对象&pid对象
-    console.log(hashVP)
+    // console.log(hashVP)
     //判断这个对象是否存在
     if (hashVP) {
       //定义children节点
